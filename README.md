@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# API Key Validation Platform
+
+A modern, responsive web application built with Next.js, shadcn/ui, and Tailwind CSS for validating OpenAI API keys across all available models.
+
+## Features
+
+- 🔐 **Secure API Key Testing**: Test your OpenAI API keys safely
+- 🤖 **Multi-Model Validation**: Test against all OpenAI models including:
+  - GPT-4o and GPT-4o-mini
+  - GPT-4 Turbo and GPT-4
+  - GPT-3.5 Turbo variants
+  - Legacy text completion models
+- 📊 **Real-time Results**: See validation results with response times
+- 🎨 **Modern UI**: Beautiful, responsive interface with dark mode support
+- ⚡ **Fast Testing**: Parallel testing across all models
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd api-key-validator
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Start the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. **Enter Your API Key**: Paste your OpenAI API key (starts with `sk-`) in the input field
+2. **Click Validate**: The application will test your key against all available OpenAI models
+3. **View Results**: See detailed results for each model including:
+   - Success/error status
+   - Response time
+   - Actual API responses
+   - Error messages if any
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## API Key Security
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Your API key is only sent directly to OpenAI's servers
+- No API keys are stored or logged on our servers
+- All validation happens client-side for maximum security
 
-## Deploy on Vercel
+## Models Tested
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The platform tests your API key against these OpenAI models:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Chat Models
+- `gpt-4o` - Latest GPT-4 model
+- `gpt-4o-mini` - Efficient GPT-4 variant
+- `gpt-4-turbo` - High-performance GPT-4
+- `gpt-4` - Standard GPT-4
+- `gpt-3.5-turbo` - Popular GPT-3.5 model
+- `gpt-3.5-turbo-16k` - Extended context GPT-3.5
+
+### Legacy Models
+- `text-davinci-003` - Advanced text completion
+- `text-davinci-002` - Standard text completion
+- `text-curie-001` - Fast text completion
+- `text-babbage-001` - Basic text completion
+- `text-ada-001` - Simple text completion
+
+## Technology Stack
+
+- **Next.js 15** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - Modern UI component library
+- **Lucide React** - Beautiful icons
+- **Axios** - HTTP client for API requests
+
+## Development
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+
+### Project Structure
+
+```
+src/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   └── ui/
+│       ├── alert.tsx
+│       ├── badge.tsx
+│       ├── button.tsx
+│       ├── card.tsx
+│       └── input.tsx
+└── lib/
+    └── utils.ts
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+MIT License - see LICENSE file for details.
+
+## Support
+
+For issues and questions, please open an issue on GitHub.
