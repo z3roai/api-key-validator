@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "API Key Validation Platform",
-  description: "Test and validate your OpenAI API keys across all available models",
+  description: "Test and validate your API keys",
 };
 
 export default function RootLayout({
